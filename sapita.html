@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para mi sapita 💛</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+    font-family:"Segoe UI",sans-serif;
+    background:linear-gradient(135deg,#fff9d6,#ffe36e,#fff4a8);
+}
+
+/* ---------------- INICIO ---------------- */
+
+#inicio{
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    z-index:20;
+    transition:1s;
+}
+
+#inicio h1{
+    color:#795600;
+    font-size:38px;
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.sobre{
+    position:relative;
+    width:220px;
+    height:145px;
+    background:#f4c542;
+    border-radius:5px;
+    cursor:pointer;
+    box-shadow:0 15px 30px rgba(100,70,0,.25);
+    transition:.4s;
+}
+
+.sobre:hover{
+    transform:scale(1.08);
+}
+
+.tapa{
+    position:absolute;
+    width:0;
+    height:0;
+    border-left:110px solid transparent;
+    border-right:110px solid transparent;
+    border-top:80px solid #dba900;
+    top:0;
+    left:0;
+    transform-origin:top;
+    transition:1s;
+}
+
+.corazon-sobre{
+    position:absolute;
+    left:50%;
+    top:55%;
+    transform:translate(-50%,-50%);
+    font-size:45px;
+}
+
+/* ---------------- CARTA ---------------- */
+
+#carta{
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:15;
+}
+
+.carta-contenido{
+    width:90%;
+    max-width:550px;
+    padding:40px 30px;
+    text-align:center;
+    background:#fffdf0;
+    border-radius:20px;
+    box-shadow:0 20px 60px rgba(90,60,0,.3);
+    animation:entrada 1.5s ease;
+}
+
+.carta-contenido h1{
+    color:#8a6500;
+    font-size:38px;
+}
+
+.carta-contenido p{
+    margin-top:20px;
+    color:#695400;
+    font-size:20px;
+    line-height:1.6;
+}
+
+.boton{
+    margin-top:25px;
+    border:0;
+    padding:15px 30px;
+    border-radius:30px;
+    background:#eeb900;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.boton:hover{
+    transform:scale(1.08);
+}
+
+/* ---------------- SORPRESA ---------------- */
+
+#sorpresa{
+    display:none;
+    width:100%;
+    height:100%;
+    position:absolute;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.mensaje{
+    position:relative;
+    z-index:10;
+    animation:entrada 2s ease;
+}
+
+.mensaje h1{
+    color:#795600;
+    font-size:55px;
+    text-shadow:0 3px 10px white;
+}
+
+.mensaje h2{
+    margin-top:15px;
+    color:#947000;
+    font-size:32px;
+}
+
+.mensaje p{
+    margin-top:20px;
+    color:#655000;
+    font-size:20px;
+    line-height:1.6;
+}
+
+.corazon{
+    margin-top:20px;
+    font-size:60px;
+    animation:latido 1s infinite;
+}
+
+/* ---------------- FLORES ---------------- */
+
+.flor{
+    position:absolute;
+    bottom:-120px;
+    font-size:65px;
+    animation:crecer 2s ease forwards;
+}
+
+.flor1{left:5%;animation-delay:.2s}
+.flor2{left:18%;animation-delay:.5s}
+.flor3{left:32%;animation-delay:.8s}
+.flor4{left:47%;animation-delay:1s}
+.flor5{left:62%;animation-delay:.6s}
+.flor6{left:76%;animation-delay:.9s}
+.flor7{left:90%;animation-delay:.4s}
+
+/* ---------------- CORAZONES ---------------- */
+
+.corazon-flotante{
+    position:absolute;
+    bottom:-50px;
+    font-size:30px;
+    animation:subir 6s linear infinite;
+}
+
+.c1{left:10%;animation-delay:0s}
+.c2{left:25%;animation-delay:2s}
+.c3{left:45%;animation-delay:1s}
+.c4{left:70%;animation-delay:3s}
+.c5{left:88%;animation-delay:1.5s}
+
+/* ---------------- ANIMACIONES ---------------- */
+
+@keyframes entrada{
+
+    from{
+        opacity:0;
+        transform:scale(.5) translateY(50px);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1) translateY(0);
+    }
+
+}
+
+@keyframes latido{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.25);
+    }
+
+}
+
+@keyframes crecer{
+
+    from{
+        transform:translateY(100px) scale(.2);
+        opacity:0;
+    }
+
+    to{
+        transform:translateY(0) scale(1);
+        opacity:1;
+    }
+
+}
+
+@keyframes subir{
+
+    0%{
+        transform:translateY(0);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-110vh);
+        opacity:0;
+    }
+
+}
+
+/* ---------------- MOVIL ---------------- */
+
+@media(max-width:600px){
+
+    #inicio h1{
+        font-size:30px;
+        padding:20px;
+    }
+
+    .mensaje h1{
+        font-size:38px;
+    }
+
+    .mensaje h2{
+        font-size:27px;
+    }
+
+    .mensaje p{
+        font-size:17px;
+    }
+
+    .flor{
+        font-size:45px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================= INICIO ================= -->
+
+<div id="inicio">
+
+    <h1>
+        💌 Tengo algo para ti...
+    </h1>
+
+    <div class="sobre" onclick="abrirSobre()">
+
+        <div class="tapa"></div>
+
+        <div class="corazon-sobre">
+            💛
+        </div>
+
+    </div>
+
+    <p style="margin-top:25px;color:#806000;">
+        Toca el sobre 💌
+    </p>
+
+</div>
+
+
+<!-- ================= CARTA ================= -->
+
+<div id="carta">
+
+    <div class="carta-contenido">
+
+        <h1>
+            🌻 Para ti 🌻
+        </h1>
+
+        <p>
+            Hay algo que quiero decirte...
+            <br><br>
+
+            No importa cuántas flores existan,
+            ninguna sería suficiente para expresar
+            lo mucho que te quiero. 💛
+        </p>
+
+        <button class="boton" onclick="mostrarSorpresa()">
+            🌻 Ver mi sorpresa
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ================= SORPRESA ================= -->
+
+<div id="sorpresa">
+
+
+    <!-- Flores -->
+
+    <div class="flor flor1">🌻</div>
+    <div class="flor flor2">🌻</div>
+    <div class="flor flor3">🌼</div>
+    <div class="flor flor4">🌻</div>
+    <div class="flor flor5">🌼</div>
+    <div class="flor flor6">🌻</div>
+    <div class="flor flor7">🌻</div>
+
+
+    <!-- Corazones -->
+
+    <div class="corazon-flotante c1">💛</div>
+    <div class="corazon-flotante c2">💛</div>
+    <div class="corazon-flotante c3">💛</div>
+    <div class="corazon-flotante c4">💛</div>
+    <div class="corazon-flotante c5">💛</div>
+
+
+    <!-- Mensaje -->
+
+    <div class="mensaje">
+
+        <h1>
+            🌻 Te quiero mucho 🌻
+        </h1>
+
+        <h2>
+            Mi sapita hermosa 💛
+        </h2>
+
+        <p>
+            Eres una personita muy especial para mí.
+            <br>
+            Gracias por existir y por formar parte de mi vida.
+            <br><br>
+
+            Esta pequeña sorpresa es para recordarte
+            algo muy sencillo...
+            <br>
+
+            <strong>
+                Te quiero muchísimo. 💛
+            </strong>
+        </p>
+
+        <div class="corazon">
+            ❤️
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function abrirSobre(){
+
+    document.querySelector(".tapa").style.transform =
+        "rotateX(180deg)";
+
+    setTimeout(()=>{
+
+        document.getElementById("inicio").style.display="none";
+
+        document.getElementById("carta").style.display="flex";
+
+    },1000);
+
+}
+
+
+function mostrarSorpresa(){
+
+    document.getElementById("carta").style.display="none";
+
+    document.getElementById("sorpresa").style.display="flex";
+
+}
+
+</script>
+
+</body>
+</html>
